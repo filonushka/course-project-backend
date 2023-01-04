@@ -13,9 +13,7 @@ import { checkAuth, handleValidationErrors } from "./utils/index.js";
 dotenv.config();
 
 mongoose
-  .connect(
-    "mongodb+srv://admin:admin@cluster0.zubpkej.mongodb.net/web-portal-for-reviews?retryWrites=true&w=majority"
-  )
+  .connect(process.env.MONGODB_URL)
   .then(() => {
     console.log("Connected to MongoDB");
   })
