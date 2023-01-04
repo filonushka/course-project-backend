@@ -82,10 +82,12 @@ export const remove = async (req, res) => {
 export const create = async (req, res) => {
   try {
     const doc = new ReviewModel({
-      title: req.body.title,
-      text: req.body.text,
-      product: req.body.product,
-      imageUrl: req.body.imageUrl,
+      reviewTitle: req.body.reviewTitle,
+      reviewExtract: req.body.reviewExtract,
+      reviewContent: req.body.reviewContent,
+      productTitle: req.body.productTitle,
+      category: req.body.category,
+      reviewImageUrl: req.body.reviewImageUrl,
       rating: req.body.rating,
       likes: req.body.likes,
       tags: req.body.tags,
@@ -112,10 +114,12 @@ export const update = async (req, res) => {
         _id: reviewId,
       },
       {
-        title: req.body.title,
-        text: req.body.text,
-        product: req.body.product,
-        imageUrl: req.body.imageUrl,
+        reviewTitle: req.body.reviewTitle,
+        reviewExtract: req.body.reviewExtract,
+        reviewContent: req.body.reviewContent,
+        productTitle: req.body.productTitle,
+        category: req.body.category,
+        reviewImageUrl: req.body.reviewImageUrl,
         rating: req.body.rating,
         likes: req.body.likes,
         tags: req.body.tags,

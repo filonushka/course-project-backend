@@ -2,16 +2,23 @@ import mongoose from "mongoose";
 
 const ReviewSchema = new mongoose.Schema(
   {
-    title: {
+    reviewTitle: {
       type: String,
       required: true,
     },
-    text: {
+    reviewExtract: {
       type: String,
       required: true,
-      unique: true,
     },
-    product: {
+    reviewContent: {
+      type: String,
+      required: true,
+    },
+    productTitle: {
+      type: String,
+      required: true,
+    },
+    category: {
       type: String,
       required: true,
     },
@@ -20,14 +27,14 @@ const ReviewSchema = new mongoose.Schema(
       default: [],
     },
     likes: {
-      type: Number,
-      default: 0,
+      type: Array,
+      default: [],
     },
     rating: {
       type: Number,
       required: true,
     },
-    imageUrl: String,
+    reviewImageUrl: String,
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
