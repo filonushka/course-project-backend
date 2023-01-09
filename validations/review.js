@@ -10,6 +10,6 @@ export const reviewCreateValidation = [
     .isLength({ min: 20 })
     .isString(),
   body("tags", "Invalid format").optional(),
-  body("rating", "Invalid format").isString(),
+  body("rating", "Invalid format").isNumeric(),
   body("reviewImageUrl", "Invalid image link").optional().isString(),
 ];

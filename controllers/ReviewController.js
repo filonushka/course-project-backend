@@ -39,7 +39,7 @@ export const getOne = async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(500).json({
-      message: "Failed to get reviews",
+      message: "Failed to get review",
     });
   }
 };
@@ -90,8 +90,12 @@ export const create = async (req, res) => {
       reviewImageUrl: req.body.reviewImageUrl,
       rating: req.body.rating,
       likes: req.body.likes,
+      grades: req.body.grades,
       tags: req.body.tags,
       user: req.userId,
+      _id: req._id,
+      comments: req.comments,
+      createdAt: req.createdAt,
     });
 
     const review = await doc.save();
@@ -122,8 +126,11 @@ export const update = async (req, res) => {
         reviewImageUrl: req.body.reviewImageUrl,
         rating: req.body.rating,
         likes: req.body.likes,
+        grades: req.body.grades,
         tags: req.body.tags,
         user: req.userId,
+        comments: req.comments,
+        createdAt: req.createdAt,
       }
     );
     res.json({
