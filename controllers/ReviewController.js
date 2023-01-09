@@ -129,10 +129,12 @@ export const update = async (req, res) => {
         grades: req.body.grades,
         tags: req.body.tags,
         user: req.userId,
-        comments: req.comments,
+        _id: req._id,
+        comments: req.body.comments,
         createdAt: req.createdAt,
       }
     );
+
     res.json({
       success: true,
     });

@@ -67,7 +67,7 @@ const ReviewSchema = new mongoose.Schema(
           required: true,
         },
         createdAt: {
-          type: String,
+          type: {},
           // required: true,
         },
         commentContent: {
@@ -75,6 +75,9 @@ const ReviewSchema = new mongoose.Schema(
           required: true,
           minlength: 3,
         },
+      },
+      {
+        timestamps: true,
       },
     ],
   },
