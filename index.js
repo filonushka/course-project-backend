@@ -19,8 +19,8 @@ const DB_NAME = process.env.DB_NAME;
 
 mongoose
   .connect(
-    // `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.zubpkej.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`
-    process.env.MONGODB_URL
+    `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.zubpkej.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`
+    // process.env.MONGODB_URL
   )
   .then(() => {
     console.log("Connected to MongoDB");
